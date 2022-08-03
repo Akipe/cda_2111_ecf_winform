@@ -1,4 +1,6 @@
 ﻿using ECF_UNTEL_MILLETRE.core.Model;
+using ECF_UNTEL_MILLETRE.core.Validation;
+using ECF_UNTEL_MILLETRE.core.Validation.Error;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -11,6 +13,9 @@ namespace ECF_UNTEL_MILLETRE.core.ViewModel
 {
     public class AddProcessorViewModel
     {
+        private ProcessorValidation _procValidator;
+        private ProcessorFamilyValidation _familyValidator;
+
         public string _name;
         public DateTime _releaseDate;
         public double _price;
@@ -22,23 +27,36 @@ namespace ECF_UNTEL_MILLETRE.core.ViewModel
 
         public AddProcessorViewModel()
         {
+            _procValidator = new ProcessorValidation();
+            _familyValidator = new ProcessorFamilyValidation();
         }
 
-        public void AddProcessor()
+        public bool IsValid()
         {
-            
+            return 
+                _procValidator.IsValid() &&
+                _familyValidator.IsValid()
+            ;
+        }
+
+        public ProcessorFamilyValidationError GetProcFamilyErrors()
+        {
+            return _familyValidator.Error;
+        }
+
+        public ProcessorValidationError GetProcErrors()
+        {
+            return _procValidator.Error;
         }
 
         public string Name
         {
             set
             {
-                if (value.Any(aChar => char.IsWhiteSpace(aChar)))
+                if (!_procValidator.IsNameValid(value))
                 {
-                    throw new ArgumentException("The name can't have a space.");
+                    _name = value;
                 }
-
-                _name = value;
             }
         }
 
@@ -46,19 +64,14 @@ namespace ECF_UNTEL_MILLETRE.core.ViewModel
         {
             set
             {
-                _releaseDate = DateTime.ParseExact(
-                    value,
-                    "dd/MM/yyyy",
-                    CultureInfo.InvariantCulture
-                );
-                /*try
+                if (_procValidator.IsReleaseDateValid(value))
                 {
-
+                    _releaseDate = DateTime.ParseExact(
+                        value,
+                        "dd/MM/yyyy",
+                        CultureInfo.InvariantCulture
+                    );
                 }
-                catch (FormatException)
-                {
-
-                }*/
             }
         }
 
@@ -66,7 +79,12 @@ namespace ECF_UNTEL_MILLETRE.core.ViewModel
         {
             set
             {
-                _price = double.Parse(value);
+                if (_procValidator.IsPriceValid(value))
+                {
+                    value = value.Replace(".", ",");
+
+                    _price = double.Parse(value);
+                }
             }
         }
 
@@ -74,7 +92,12 @@ namespace ECF_UNTEL_MILLETRE.core.ViewModel
         {
             set
             {
-                _frequency = double.Parse(value);
+                if (_procValidator.IsFrequencyValid(value))
+                {
+                    value = value.Replace(".", ",");
+
+                    _frequency = double.Parse(value);
+                }
             }
         }
 
@@ -82,26 +105,11 @@ namespace ECF_UNTEL_MILLETRE.core.ViewModel
         {
             set
             {
-                if (value.Length != 5)
+                if (_procValidator.IsReferenceValid(value))
                 {
-                    throw new ArgumentException("The reference need to have a size of 5 (4 digit & 1 char)");
+                    _referenceDigit = Int32.Parse(value.Substring(0, 4));
+                    _referenceLetter = value[4];
                 }
-
-                if (!Char.IsLetter(value[4]))
-                {
-                    throw new ArgumentException("The last caractere has to be a letter");
-                }
-
-                for (int indexChar = 0; indexChar < 4; indexChar++)
-                {
-                    if (!Char.IsDigit(value[indexChar]))
-                    {
-                        throw new ArgumentException("The 4 first caracteres has to be digits");
-                    }
-                }
-
-                _referenceDigit = Int32.Parse(value.Substring(0, 4));
-                _referenceLetter = value[4];
             }
         }
 
@@ -109,12 +117,10 @@ namespace ECF_UNTEL_MILLETRE.core.ViewModel
         {
             set
             {
-                if (value.Any(aChar => char.IsWhiteSpace(aChar)))
+                if (_familyValidator.IsNameValid(value))
                 {
-                    throw new ArgumentException("The name can't have a space");
+                    _familyName = value;
                 }
-
-                _familyName = value;
             }
         }
 
@@ -122,9 +128,9 @@ namespace ECF_UNTEL_MILLETRE.core.ViewModel
         {
             set
             {
-                if (!Enum.TryParse<ProcessorArch>(value, out _familyArch))
+                if (_familyValidator.IsArchValid(value))
                 {
-                    throw new Exception("error");
+                    _familyArch = Enum.Parse<ProcessorArch>(value);
                 }
             }
         }

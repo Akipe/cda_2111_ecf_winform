@@ -78,6 +78,7 @@ namespace ECF_UNTEL_MILLETRE.ui
             tbProcPrice.Text = vm.Price;
             tbFamilyName.Text = vm.FamilyName;
             tbFamilyArch.Text = vm.FamilyArch;
+            tbFamilyId.Text = vm.FamilyId;
         }
 
         private void bAddProc_Click(object sender, EventArgs e)

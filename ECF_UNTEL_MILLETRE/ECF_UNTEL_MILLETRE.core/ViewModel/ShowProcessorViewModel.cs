@@ -23,6 +23,8 @@ namespace ECF_UNTEL_MILLETRE.core.ViewModel
 
         public string FamilyArch { get; private set; }
 
+        public string FamilyId { get; private set; }
+
 
 
         public ShowProcessorViewModel()
@@ -40,6 +42,7 @@ namespace ECF_UNTEL_MILLETRE.core.ViewModel
             Reference = proc.Reference;
             FamilyName = proc.Family.Name;
             FamilyArch = proc.Family.Arch.ToString();
+            FamilyId = proc.Family.Id.ToString();
 
             //throw new ArgumentException($"There is no processor named {name}");
         }

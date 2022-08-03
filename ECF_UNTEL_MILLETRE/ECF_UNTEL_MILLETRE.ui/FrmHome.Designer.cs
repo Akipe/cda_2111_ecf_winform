@@ -47,6 +47,8 @@
             this.lFamilyArch = new System.Windows.Forms.Label();
             this.tbFamilyName = new System.Windows.Forms.TextBox();
             this.bAddProc = new System.Windows.Forms.Button();
+            this.tbFamilyId = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbProcessorList.SuspendLayout();
             this.gbProcessorSpecs.SuspendLayout();
             this.gbFamilySpecs.SuspendLayout();
@@ -178,13 +180,15 @@
             // 
             // gbFamilySpecs
             // 
+            this.gbFamilySpecs.Controls.Add(this.tbFamilyId);
+            this.gbFamilySpecs.Controls.Add(this.label1);
             this.gbFamilySpecs.Controls.Add(this.tbFamilyArch);
             this.gbFamilySpecs.Controls.Add(this.lFamilyName);
             this.gbFamilySpecs.Controls.Add(this.lFamilyArch);
             this.gbFamilySpecs.Controls.Add(this.tbFamilyName);
             this.gbFamilySpecs.Location = new System.Drawing.Point(518, 12);
             this.gbFamilySpecs.Name = "gbFamilySpecs";
-            this.gbFamilySpecs.Size = new System.Drawing.Size(181, 86);
+            this.gbFamilySpecs.Size = new System.Drawing.Size(181, 110);
             this.gbFamilySpecs.TabIndex = 0;
             this.gbFamilySpecs.TabStop = false;
             this.gbFamilySpecs.Text = "Famille";
@@ -234,6 +238,23 @@
             this.bAddProc.UseVisualStyleBackColor = true;
             this.bAddProc.Click += new System.EventHandler(this.bAddProc_Click);
             // 
+            // tbFamilyId
+            // 
+            this.tbFamilyId.Location = new System.Drawing.Point(85, 75);
+            this.tbFamilyId.Name = "tbFamilyId";
+            this.tbFamilyId.ReadOnly = true;
+            this.tbFamilyId.Size = new System.Drawing.Size(65, 23);
+            this.tbFamilyId.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 15);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "ID";
+            // 
             // FrmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -278,5 +299,7 @@
         private TextBox tbFamilyArch;
         private TextBox tbFamilyName;
         private Button bAddProc;
+        private TextBox tbFamilyId;
+        private Label label1;
     }
 }

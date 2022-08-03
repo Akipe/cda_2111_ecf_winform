@@ -1,4 +1,5 @@
-﻿using ECF_UNTEL_MILLETRE.core.ViewModel;
+﻿using ECF_UNTEL_MILLETRE.core.Validation.Error;
+using ECF_UNTEL_MILLETRE.core.ViewModel;
 using ECF_UNTEL_MILLETRE.core.WorkUnit;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,6 @@ namespace ECF_UNTEL_MILLETRE.ui
     public partial class FrmAddCpu : Form
     {
         private ProcessorWorkUnit wu;
-        private AddProcessorViewModel vm;
 
         public FrmAddCpu()
         {
@@ -25,7 +25,8 @@ namespace ECF_UNTEL_MILLETRE.ui
         private void FrmAddCpu_Load(object sender, EventArgs e)
         {
             wu = new ProcessorWorkUnit();
-            vm = new AddProcessorViewModel();
+
+            this.AcceptButton = bAdd;
         }
 
         private void BClose_Click(object sender, EventArgs e)
@@ -45,6 +46,8 @@ namespace ECF_UNTEL_MILLETRE.ui
 
         private void bAdd_Click(object sender, EventArgs e)
         {
+            AddProcessorViewModel vm = new AddProcessorViewModel();
+
             vm.Name = tbProcName.Text;
             vm.Reference = tbProcRef.Text;
             vm.Frequency = tbProcFrec.Text;
@@ -54,9 +57,24 @@ namespace ECF_UNTEL_MILLETRE.ui
             vm.FamilyName = tbFamilyName.Text;
             vm.FamilyArch = tbFamilyArch.Text;
 
-            wu.AddOne(vm);
+            if (vm.IsValid())
+            {
+                wu.AddOne(vm);
+                this.Close();
+            }
+            else
+            {
+                ProcessorValidationError procErr = vm.GetProcErrors();
+                ProcessorFamilyValidationError famErr = vm.GetProcFamilyErrors();
 
-            this.Close();
+                lProcNameMsg.Text = procErr.NameMsg;
+                lProcRefMsg.Text = procErr.ReferenceMsg;
+                lProcFrecMsg.Text = procErr.FrequencyMsg;
+                lProcReleaseDateMsg.Text = procErr.ReleaseDateMsg;
+                lProcPriceMsg.Text = procErr.PriceMsg;
+                lFamilyName.Text = famErr.NameMsg;
+                lFamilyArch.Text = famErr.ArchMsg;
+            }
         }
     }
 }
