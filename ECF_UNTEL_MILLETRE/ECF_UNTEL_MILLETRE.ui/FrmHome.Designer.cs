@@ -303,7 +303,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "FrmHome";
-            this.Text = "Liste des micro-proceseurs - Untel";
+            this.Text = "Liste des micro-processeurs - Untel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmHome_FormClosing);
             this.Load += new System.EventHandler(this.FrmHome_Load);
             this.gbProcessorList.ResumeLayout(false);

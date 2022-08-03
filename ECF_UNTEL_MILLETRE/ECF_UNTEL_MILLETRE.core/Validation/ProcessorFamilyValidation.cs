@@ -46,8 +46,6 @@ namespace ECF_UNTEL_MILLETRE.core.Validation
 
         public bool IsArchValid(string value)
         {
-            var test = int.TryParse(value, out int test2);
-
             if (int.TryParse(value, out int result))
             {
                 Error.ArchMsg = "L'architecture doit être soit \"x86\" ou \"x64\"";

@@ -29,6 +29,7 @@ namespace ECF_UNTEL_MILLETRE.ui
             hasSaved = false;
 
             tbProcReleaseDate.Text = DateTime.Now.ToShortDateString();
+            cbFamilyArch.SelectedIndex = 0;
 
             this.AcceptButton = bAdd;
         }
@@ -49,7 +50,7 @@ namespace ECF_UNTEL_MILLETRE.ui
             vm.Price = tbProcPrice.Text;
 
             vm.FamilyName = tbFamilyName.Text;
-            vm.FamilyArch = tbFamilyArch.Text;
+            vm.FamilyArch = cbFamilyArch.SelectedItem.ToString();
 
             if (vm.IsValid())
             {

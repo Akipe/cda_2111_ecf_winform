@@ -45,8 +45,6 @@ namespace ECF_UNTEL_MILLETRE.core.Model
             get => _name;
             set
             {
-                var test = value;
-
                 if (value.Any(aChar => char.IsWhiteSpace(aChar)))
                 {
                     throw new ArgumentException("The name can't have a space.");

@@ -30,6 +30,11 @@
         {
             this.bAdd = new System.Windows.Forms.Button();
             this.gbProcessorSpecs = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lProcRefMsg = new System.Windows.Forms.Label();
             this.lProcNameMsg = new System.Windows.Forms.Label();
             this.lProcPriceMsg = new System.Windows.Forms.Label();
@@ -46,9 +51,10 @@
             this.lName = new System.Windows.Forms.Label();
             this.lReferency = new System.Windows.Forms.Label();
             this.gbFamilySpecs = new System.Windows.Forms.GroupBox();
+            this.cbFamilyArch = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.lFamArchMsg = new System.Windows.Forms.Label();
             this.lFamNameMsg = new System.Windows.Forms.Label();
-            this.tbFamilyArch = new System.Windows.Forms.TextBox();
             this.lFamilyName = new System.Windows.Forms.Label();
             this.lFamilyArch = new System.Windows.Forms.Label();
             this.tbFamilyName = new System.Windows.Forms.TextBox();
@@ -61,7 +67,7 @@
             // bAdd
             // 
             this.bAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bAdd.Location = new System.Drawing.Point(651, 216);
+            this.bAdd.Location = new System.Drawing.Point(714, 216);
             this.bAdd.Name = "bAdd";
             this.bAdd.Size = new System.Drawing.Size(76, 35);
             this.bAdd.TabIndex = 7;
@@ -71,6 +77,11 @@
             // 
             // gbProcessorSpecs
             // 
+            this.gbProcessorSpecs.Controls.Add(this.label5);
+            this.gbProcessorSpecs.Controls.Add(this.label4);
+            this.gbProcessorSpecs.Controls.Add(this.label3);
+            this.gbProcessorSpecs.Controls.Add(this.label2);
+            this.gbProcessorSpecs.Controls.Add(this.label1);
             this.gbProcessorSpecs.Controls.Add(this.lProcRefMsg);
             this.gbProcessorSpecs.Controls.Add(this.lProcNameMsg);
             this.gbProcessorSpecs.Controls.Add(this.lProcPriceMsg);
@@ -88,10 +99,57 @@
             this.gbProcessorSpecs.Controls.Add(this.lReferency);
             this.gbProcessorSpecs.Location = new System.Drawing.Point(12, 12);
             this.gbProcessorSpecs.Name = "gbProcessorSpecs";
-            this.gbProcessorSpecs.Size = new System.Drawing.Size(430, 297);
+            this.gbProcessorSpecs.Size = new System.Drawing.Size(494, 297);
             this.gbProcessorSpecs.TabIndex = 4;
             this.gbProcessorSpecs.TabStop = false;
             this.gbProcessorSpecs.Text = "Spécifications";
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(270, 245);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(208, 38);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "nombre avec au max 2 décimales, virgule ou point";
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(270, 192);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(195, 38);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "date au format jour/mois/année (ex: 21/04/2020)";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(273, 136);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(205, 38);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "nombre avec au max 4 decimales, virgule ou point";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(273, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 15);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "4 chiffres et 1 lettre";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(273, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 15);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "lettre uniquement, sans espace";
             // 
             // lProcRefMsg
             // 
@@ -230,18 +288,41 @@
             // 
             // gbFamilySpecs
             // 
+            this.gbFamilySpecs.Controls.Add(this.cbFamilyArch);
+            this.gbFamilySpecs.Controls.Add(this.label6);
             this.gbFamilySpecs.Controls.Add(this.lFamArchMsg);
             this.gbFamilySpecs.Controls.Add(this.lFamNameMsg);
-            this.gbFamilySpecs.Controls.Add(this.tbFamilyArch);
             this.gbFamilySpecs.Controls.Add(this.lFamilyName);
             this.gbFamilySpecs.Controls.Add(this.lFamilyArch);
             this.gbFamilySpecs.Controls.Add(this.tbFamilyName);
-            this.gbFamilySpecs.Location = new System.Drawing.Point(448, 12);
+            this.gbFamilySpecs.Location = new System.Drawing.Point(512, 12);
             this.gbFamilySpecs.Name = "gbFamilySpecs";
             this.gbFamilySpecs.Size = new System.Drawing.Size(354, 130);
             this.gbFamilySpecs.TabIndex = 5;
             this.gbFamilySpecs.TabStop = false;
             this.gbFamilySpecs.Text = "Famille";
+            // 
+            // cbFamilyArch
+            // 
+            this.cbFamilyArch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFamilyArch.FormattingEnabled = true;
+            this.cbFamilyArch.Items.AddRange(new object[] {
+            "x86",
+            "x64"});
+            this.cbFamilyArch.Location = new System.Drawing.Point(85, 69);
+            this.cbFamilyArch.Name = "cbFamilyArch";
+            this.cbFamilyArch.Size = new System.Drawing.Size(65, 23);
+            this.cbFamilyArch.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(156, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(170, 15);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "lettre uniquement, sans espace";
             // 
             // lFamArchMsg
             // 
@@ -262,14 +343,6 @@
             this.lFamNameMsg.Name = "lFamNameMsg";
             this.lFamNameMsg.Size = new System.Drawing.Size(0, 15);
             this.lFamNameMsg.TabIndex = 12;
-            // 
-            // tbFamilyArch
-            // 
-            this.tbFamilyArch.Location = new System.Drawing.Point(85, 69);
-            this.tbFamilyArch.Name = "tbFamilyArch";
-            this.tbFamilyArch.Size = new System.Drawing.Size(65, 23);
-            this.tbFamilyArch.TabIndex = 6;
-            this.tbFamilyArch.Text = "x64";
             // 
             // lFamilyName
             // 
@@ -300,7 +373,7 @@
             // BClose
             // 
             this.BClose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BClose.Location = new System.Drawing.Point(522, 216);
+            this.BClose.Location = new System.Drawing.Point(585, 216);
             this.BClose.Name = "BClose";
             this.BClose.Size = new System.Drawing.Size(76, 35);
             this.BClose.TabIndex = 8;
@@ -312,7 +385,7 @@
             // 
             this.lCorporationInfo.AutoSize = true;
             this.lCorporationInfo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lCorporationInfo.Location = new System.Drawing.Point(733, 296);
+            this.lCorporationInfo.Location = new System.Drawing.Point(796, 296);
             this.lCorporationInfo.Name = "lCorporationInfo";
             this.lCorporationInfo.Size = new System.Drawing.Size(69, 13);
             this.lCorporationInfo.TabIndex = 8;
@@ -322,7 +395,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 318);
+            this.ClientSize = new System.Drawing.Size(888, 318);
             this.Controls.Add(this.lCorporationInfo);
             this.Controls.Add(this.BClose);
             this.Controls.Add(this.bAdd);
@@ -358,7 +431,6 @@
         private Label lName;
         private Label lReferency;
         private GroupBox gbFamilySpecs;
-        private TextBox tbFamilyArch;
         private Label lFamilyName;
         private Label lFamilyArch;
         private TextBox tbFamilyName;
@@ -371,5 +443,12 @@
         private Label lFamArchMsg;
         private Label lFamNameMsg;
         private Label lCorporationInfo;
+        private Label label1;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label label6;
+        private ComboBox cbFamilyArch;
     }
 }
