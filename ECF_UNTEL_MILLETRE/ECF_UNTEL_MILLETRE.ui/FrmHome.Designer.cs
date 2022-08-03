@@ -42,13 +42,13 @@
             this.lName = new System.Windows.Forms.Label();
             this.lReferency = new System.Windows.Forms.Label();
             this.gbFamilySpecs = new System.Windows.Forms.GroupBox();
+            this.tbFamilyId = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tbFamilyArch = new System.Windows.Forms.TextBox();
             this.lFamilyName = new System.Windows.Forms.Label();
             this.lFamilyArch = new System.Windows.Forms.Label();
             this.tbFamilyName = new System.Windows.Forms.TextBox();
             this.bAddProc = new System.Windows.Forms.Button();
-            this.tbFamilyId = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.gbProcessorList.SuspendLayout();
             this.gbProcessorSpecs.SuspendLayout();
             this.gbFamilySpecs.SuspendLayout();
@@ -193,6 +193,23 @@
             this.gbFamilySpecs.TabStop = false;
             this.gbFamilySpecs.Text = "Famille";
             // 
+            // tbFamilyId
+            // 
+            this.tbFamilyId.Location = new System.Drawing.Point(85, 75);
+            this.tbFamilyId.Name = "tbFamilyId";
+            this.tbFamilyId.ReadOnly = true;
+            this.tbFamilyId.Size = new System.Drawing.Size(65, 23);
+            this.tbFamilyId.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 15);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "ID";
+            // 
             // tbFamilyArch
             // 
             this.tbFamilyArch.Location = new System.Drawing.Point(85, 46);
@@ -230,30 +247,13 @@
             // bAddProc
             // 
             this.bAddProc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bAddProc.Location = new System.Drawing.Point(568, 128);
+            this.bAddProc.Location = new System.Drawing.Point(558, 135);
             this.bAddProc.Name = "bAddProc";
-            this.bAddProc.Size = new System.Drawing.Size(110, 53);
+            this.bAddProc.Size = new System.Drawing.Size(128, 53);
             this.bAddProc.TabIndex = 3;
             this.bAddProc.Text = "Ajouter nouveau";
             this.bAddProc.UseVisualStyleBackColor = true;
             this.bAddProc.Click += new System.EventHandler(this.bAddProc_Click);
-            // 
-            // tbFamilyId
-            // 
-            this.tbFamilyId.Location = new System.Drawing.Point(85, 75);
-            this.tbFamilyId.Name = "tbFamilyId";
-            this.tbFamilyId.ReadOnly = true;
-            this.tbFamilyId.Size = new System.Drawing.Size(65, 23);
-            this.tbFamilyId.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 15);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "ID";
             // 
             // FrmHome
             // 

@@ -53,7 +53,7 @@ namespace ECF_UNTEL_MILLETRE.core.ViewModel
         {
             set
             {
-                if (!_procValidator.IsNameValid(value))
+                if (_procValidator.IsNameValid(value))
                 {
                     _name = value;
                 }

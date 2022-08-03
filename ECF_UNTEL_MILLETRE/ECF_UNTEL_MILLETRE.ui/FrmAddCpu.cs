@@ -72,8 +72,8 @@ namespace ECF_UNTEL_MILLETRE.ui
                 lProcFrecMsg.Text = procErr.FrequencyMsg;
                 lProcReleaseDateMsg.Text = procErr.ReleaseDateMsg;
                 lProcPriceMsg.Text = procErr.PriceMsg;
-                lFamilyName.Text = famErr.NameMsg;
-                lFamilyArch.Text = famErr.ArchMsg;
+                lFamNameMsg.Text = famErr.NameMsg;
+                lFamArchMsg.Text = famErr.ArchMsg;
             }
         }
     }

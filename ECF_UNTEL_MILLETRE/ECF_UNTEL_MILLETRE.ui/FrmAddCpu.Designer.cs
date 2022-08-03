@@ -237,7 +237,7 @@
             this.gbFamilySpecs.Controls.Add(this.tbFamilyName);
             this.gbFamilySpecs.Location = new System.Drawing.Point(448, 12);
             this.gbFamilySpecs.Name = "gbFamilySpecs";
-            this.gbFamilySpecs.Size = new System.Drawing.Size(294, 130);
+            this.gbFamilySpecs.Size = new System.Drawing.Size(354, 130);
             this.gbFamilySpecs.TabIndex = 5;
             this.gbFamilySpecs.TabStop = false;
             this.gbFamilySpecs.Text = "Famille";
