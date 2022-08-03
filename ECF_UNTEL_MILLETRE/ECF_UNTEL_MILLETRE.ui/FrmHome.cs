@@ -16,7 +16,8 @@ namespace ECF_UNTEL_MILLETRE.ui
     public partial class FrmHome : Form
     {
         private ProcessorWorkUnit wu;
-        private ListProcessorViewModel vm;
+        private ShowProcessorViewModel vm;
+        private List<string> listProcName;
 
         public FrmHome()
         {
@@ -57,20 +58,18 @@ namespace ECF_UNTEL_MILLETRE.ui
         private void FrmHome_Load(object sender, EventArgs e)
         {
             wu = new ProcessorWorkUnit();
-            vm = wu.GetList();
 
             InitSomeProc();
 
-            vm.SetListProcName();
+            listProcName = wu.GetListProcName();
 
-            lbProcessorList.DataSource = vm.listProcName;
+            lbProcessorList.DataSource = listProcName;
         }
-
 
 
         private void lbProcessorList_ProcSelectChanged(object sender, EventArgs e)
         {
-            vm.SetFromName(lbProcessorList.SelectedItem.ToString());
+            vm = wu.GetInfoFromOne(lbProcessorList.SelectedItem.ToString());
 
             tbProcName.Text = vm.Name;
             tbProcRef.Text = vm.Reference;
@@ -79,6 +78,15 @@ namespace ECF_UNTEL_MILLETRE.ui
             tbProcPrice.Text = vm.Price;
             tbFamilyName.Text = vm.FamilyName;
             tbFamilyArch.Text = vm.FamilyArch;
+        }
+
+        private void bAddProc_Click(object sender, EventArgs e)
+        {
+            FrmAddCpu frmAddCpu = new FrmAddCpu();
+            frmAddCpu.ShowDialog();
+
+            listProcName = wu.GetListProcName();
+            lbProcessorList.DataSource = listProcName;
         }
     }
 }

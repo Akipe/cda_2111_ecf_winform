@@ -1,6 +1,6 @@
 ﻿namespace ECF_UNTEL_MILLETRE.ui
 {
-    partial class FrmHome
+    partial class FrmAddCpu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbProcessorList = new System.Windows.Forms.ListBox();
-            this.gbProcessorList = new System.Windows.Forms.GroupBox();
+            this.bAdd = new System.Windows.Forms.Button();
             this.gbProcessorSpecs = new System.Windows.Forms.GroupBox();
             this.tbProcReleaseDate = new System.Windows.Forms.TextBox();
             this.tbProcName = new System.Windows.Forms.TextBox();
@@ -46,31 +45,21 @@
             this.lFamilyName = new System.Windows.Forms.Label();
             this.lFamilyArch = new System.Windows.Forms.Label();
             this.tbFamilyName = new System.Windows.Forms.TextBox();
-            this.bAddProc = new System.Windows.Forms.Button();
-            this.gbProcessorList.SuspendLayout();
+            this.BClose = new System.Windows.Forms.Button();
             this.gbProcessorSpecs.SuspendLayout();
             this.gbFamilySpecs.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbProcessorList
+            // bAdd
             // 
-            this.lbProcessorList.FormattingEnabled = true;
-            this.lbProcessorList.ItemHeight = 15;
-            this.lbProcessorList.Location = new System.Drawing.Point(6, 22);
-            this.lbProcessorList.Name = "lbProcessorList";
-            this.lbProcessorList.Size = new System.Drawing.Size(188, 154);
-            this.lbProcessorList.TabIndex = 0;
-            this.lbProcessorList.SelectedIndexChanged += new System.EventHandler(this.lbProcessorList_ProcSelectChanged);
-            // 
-            // gbProcessorList
-            // 
-            this.gbProcessorList.Controls.Add(this.lbProcessorList);
-            this.gbProcessorList.Location = new System.Drawing.Point(12, 12);
-            this.gbProcessorList.Name = "gbProcessorList";
-            this.gbProcessorList.Size = new System.Drawing.Size(200, 187);
-            this.gbProcessorList.TabIndex = 2;
-            this.gbProcessorList.TabStop = false;
-            this.gbProcessorList.Text = "Modèles";
+            this.bAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bAdd.Location = new System.Drawing.Point(651, 145);
+            this.bAdd.Name = "bAdd";
+            this.bAdd.Size = new System.Drawing.Size(76, 35);
+            this.bAdd.TabIndex = 6;
+            this.bAdd.Text = "Valider";
+            this.bAdd.UseVisualStyleBackColor = true;
+            this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
             // 
             // gbProcessorSpecs
             // 
@@ -84,10 +73,10 @@
             this.gbProcessorSpecs.Controls.Add(this.lFrequency);
             this.gbProcessorSpecs.Controls.Add(this.lName);
             this.gbProcessorSpecs.Controls.Add(this.lReferency);
-            this.gbProcessorSpecs.Location = new System.Drawing.Point(218, 12);
+            this.gbProcessorSpecs.Location = new System.Drawing.Point(12, 12);
             this.gbProcessorSpecs.Name = "gbProcessorSpecs";
-            this.gbProcessorSpecs.Size = new System.Drawing.Size(294, 187);
-            this.gbProcessorSpecs.TabIndex = 0;
+            this.gbProcessorSpecs.Size = new System.Drawing.Size(430, 187);
+            this.gbProcessorSpecs.TabIndex = 4;
             this.gbProcessorSpecs.TabStop = false;
             this.gbProcessorSpecs.Text = "Spécifications";
             // 
@@ -95,41 +84,41 @@
             // 
             this.tbProcReleaseDate.Location = new System.Drawing.Point(103, 104);
             this.tbProcReleaseDate.Name = "tbProcReleaseDate";
-            this.tbProcReleaseDate.ReadOnly = true;
             this.tbProcReleaseDate.Size = new System.Drawing.Size(164, 23);
             this.tbProcReleaseDate.TabIndex = 10;
+            this.tbProcReleaseDate.Text = "10/10/1990";
             // 
             // tbProcName
             // 
             this.tbProcName.Location = new System.Drawing.Point(103, 19);
             this.tbProcName.Name = "tbProcName";
-            this.tbProcName.ReadOnly = true;
             this.tbProcName.Size = new System.Drawing.Size(164, 23);
             this.tbProcName.TabIndex = 9;
+            this.tbProcName.Text = "Ector";
             // 
             // tbProcRef
             // 
             this.tbProcRef.Location = new System.Drawing.Point(103, 46);
             this.tbProcRef.Name = "tbProcRef";
-            this.tbProcRef.ReadOnly = true;
             this.tbProcRef.Size = new System.Drawing.Size(164, 23);
             this.tbProcRef.TabIndex = 8;
+            this.tbProcRef.Text = "1000A";
             // 
             // tbProcFrec
             // 
             this.tbProcFrec.Location = new System.Drawing.Point(103, 75);
             this.tbProcFrec.Name = "tbProcFrec";
-            this.tbProcFrec.ReadOnly = true;
             this.tbProcFrec.Size = new System.Drawing.Size(164, 23);
             this.tbProcFrec.TabIndex = 7;
+            this.tbProcFrec.Text = "2,7";
             // 
             // tbProcPrice
             // 
             this.tbProcPrice.Location = new System.Drawing.Point(103, 133);
             this.tbProcPrice.Name = "tbProcPrice";
-            this.tbProcPrice.ReadOnly = true;
             this.tbProcPrice.Size = new System.Drawing.Size(164, 23);
             this.tbProcPrice.TabIndex = 6;
+            this.tbProcPrice.Text = "245";
             // 
             // lPrice
             // 
@@ -182,10 +171,10 @@
             this.gbFamilySpecs.Controls.Add(this.lFamilyName);
             this.gbFamilySpecs.Controls.Add(this.lFamilyArch);
             this.gbFamilySpecs.Controls.Add(this.tbFamilyName);
-            this.gbFamilySpecs.Location = new System.Drawing.Point(518, 12);
+            this.gbFamilySpecs.Location = new System.Drawing.Point(448, 12);
             this.gbFamilySpecs.Name = "gbFamilySpecs";
-            this.gbFamilySpecs.Size = new System.Drawing.Size(181, 86);
-            this.gbFamilySpecs.TabIndex = 0;
+            this.gbFamilySpecs.Size = new System.Drawing.Size(294, 86);
+            this.gbFamilySpecs.TabIndex = 5;
             this.gbFamilySpecs.TabStop = false;
             this.gbFamilySpecs.Text = "Famille";
             // 
@@ -193,9 +182,9 @@
             // 
             this.tbFamilyArch.Location = new System.Drawing.Point(85, 46);
             this.tbFamilyArch.Name = "tbFamilyArch";
-            this.tbFamilyArch.ReadOnly = true;
             this.tbFamilyArch.Size = new System.Drawing.Size(65, 23);
             this.tbFamilyArch.TabIndex = 6;
+            this.tbFamilyArch.Text = "x64";
             // 
             // lFamilyName
             // 
@@ -219,36 +208,35 @@
             // 
             this.tbFamilyName.Location = new System.Drawing.Point(85, 19);
             this.tbFamilyName.Name = "tbFamilyName";
-            this.tbFamilyName.ReadOnly = true;
             this.tbFamilyName.Size = new System.Drawing.Size(65, 23);
             this.tbFamilyName.TabIndex = 5;
+            this.tbFamilyName.Text = "LAKE";
             // 
-            // bAddProc
+            // BClose
             // 
-            this.bAddProc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bAddProc.Location = new System.Drawing.Point(568, 128);
-            this.bAddProc.Name = "bAddProc";
-            this.bAddProc.Size = new System.Drawing.Size(110, 53);
-            this.bAddProc.TabIndex = 3;
-            this.bAddProc.Text = "Ajouter nouveau";
-            this.bAddProc.UseVisualStyleBackColor = true;
-            this.bAddProc.Click += new System.EventHandler(this.bAddProc_Click);
+            this.BClose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BClose.Location = new System.Drawing.Point(522, 145);
+            this.BClose.Name = "BClose";
+            this.BClose.Size = new System.Drawing.Size(76, 35);
+            this.BClose.TabIndex = 7;
+            this.BClose.Text = "Fermer";
+            this.BClose.UseVisualStyleBackColor = true;
+            this.BClose.Click += new System.EventHandler(this.BClose_Click);
             // 
-            // FrmHome
+            // FrmAddCpu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 217);
-            this.Controls.Add(this.bAddProc);
+            this.ClientSize = new System.Drawing.Size(814, 213);
+            this.Controls.Add(this.BClose);
+            this.Controls.Add(this.bAdd);
             this.Controls.Add(this.gbProcessorSpecs);
             this.Controls.Add(this.gbFamilySpecs);
-            this.Controls.Add(this.gbProcessorList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "FrmHome";
-            this.Text = "Liste des micro-proceseurs";
-            this.Load += new System.EventHandler(this.FrmHome_Load);
-            this.gbProcessorList.ResumeLayout(false);
+            this.Name = "FrmAddCpu";
+            this.Text = "Ajout d\'un processeur";
+            this.Load += new System.EventHandler(this.FrmAddCpu_Load);
             this.gbProcessorSpecs.ResumeLayout(false);
             this.gbProcessorSpecs.PerformLayout();
             this.gbFamilySpecs.ResumeLayout(false);
@@ -259,24 +247,23 @@
 
         #endregion
 
-        private ListBox lbProcessorList;
-        private GroupBox gbProcessorList;
+        private Button bAdd;
         private GroupBox gbProcessorSpecs;
-        private Label lReferency;
-        private GroupBox gbFamilySpecs;
-        private Label lReleaseDate;
-        private Label lFrequency;
-        private Label lName;
-        private Label lFamilyName;
-        private Label lFamilyArch;
-        private Label lPrice;
         private TextBox tbProcReleaseDate;
         private TextBox tbProcName;
         private TextBox tbProcRef;
         private TextBox tbProcFrec;
         private TextBox tbProcPrice;
+        private Label lPrice;
+        private Label lReleaseDate;
+        private Label lFrequency;
+        private Label lName;
+        private Label lReferency;
+        private GroupBox gbFamilySpecs;
         private TextBox tbFamilyArch;
+        private Label lFamilyName;
+        private Label lFamilyArch;
         private TextBox tbFamilyName;
-        private Button bAddProc;
+        private Button BClose;
     }
 }
