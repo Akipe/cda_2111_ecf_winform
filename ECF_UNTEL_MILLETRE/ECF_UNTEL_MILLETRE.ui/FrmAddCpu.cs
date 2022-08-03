@@ -69,6 +69,13 @@ namespace ECF_UNTEL_MILLETRE.ui
                 lProcPriceMsg.Text = procErr.PriceMsg;
                 lFamNameMsg.Text = famErr.NameMsg;
                 lFamArchMsg.Text = famErr.ArchMsg;
+
+                MessageBox.Show(
+                    "Certains champs sont incorrectes, veuillez les corriger",
+                    "Erreur lors de l'enregistrement",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
 
@@ -76,7 +83,7 @@ namespace ECF_UNTEL_MILLETRE.ui
         {
             if (hasSaved)
             {
-                DialogResult result = MessageBox.Show(
+                MessageBox.Show(
                     "Processeur enregistré",
                     "Sauvegarde terminé",
                     MessageBoxButtons.OK,

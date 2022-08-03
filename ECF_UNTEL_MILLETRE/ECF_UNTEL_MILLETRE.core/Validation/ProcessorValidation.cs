@@ -1,4 +1,5 @@
 ﻿using ECF_UNTEL_MILLETRE.core.Validation.Error;
+using ECF_UNTEL_MILLETRE.core.WorkUnit;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -106,6 +107,13 @@ namespace ECF_UNTEL_MILLETRE.core.Validation
                     _isValid = false;
                     return false;
                 }
+            }
+
+            if (ProcessorWorkUnit.IsIdExist(value))
+            {
+                Error.ReferenceMsg += "Cette référence est déjà utilisé par un autre processeur.";
+                _isValid = false;
+                return false;
             }
 
             return true;

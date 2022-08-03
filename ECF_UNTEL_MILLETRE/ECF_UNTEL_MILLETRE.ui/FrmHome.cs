@@ -35,7 +35,7 @@ namespace ECF_UNTEL_MILLETRE.ui
 
             InitProc();
 
-            listProcName = wu.GetListProcName();
+            listProcName = wu.GetListProcIdentifier();
 
             lbProcessorList.DataSource = listProcName;
         }
@@ -60,7 +60,7 @@ namespace ECF_UNTEL_MILLETRE.ui
             FrmAddCpu frmAddCpu = new FrmAddCpu();
             frmAddCpu.ShowDialog();
 
-            listProcName = wu.GetListProcName();
+            listProcName = wu.GetListProcIdentifier();
             lbProcessorList.DataSource = listProcName;
         }
 

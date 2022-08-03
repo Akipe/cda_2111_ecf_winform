@@ -26,6 +26,8 @@ namespace ECF_UNTEL_MILLETRE.core.WorkUnit
         public void AddOne(AddProcessorViewModel viewModel)
         {
             ProcessorFamily family = new ProcessorFamily(viewModel._familyName, viewModel._familyArch);
+            
+            
             Processor proc = new Processor(
                 family,
                 viewModel._referenceDigit,
@@ -36,17 +38,23 @@ namespace ECF_UNTEL_MILLETRE.core.WorkUnit
                 viewModel._frequency
             );
 
+            if (IsIdExist(proc.Reference))
+            {
+                throw new ApplicationException(
+                    $"Il existe déjà un processeur avec la même référence : {proc.Reference}"
+                );
+            }
 
             ProcessorManager.List.Add(proc);
         }
 
-        public ShowProcessorViewModel GetInfoFromOne(string procName)
+        public ShowProcessorViewModel GetInfoFromOne(string procRef)
         {
             ShowProcessorViewModel viewModel = new ShowProcessorViewModel();
 
             foreach (Processor proc in ProcessorManager.List)
             {
-                if (procName == proc.Name)
+                if (String.Equals(procRef,proc.Reference))
                 {
                     viewModel.FromOne(proc);
                 }
@@ -55,13 +63,13 @@ namespace ECF_UNTEL_MILLETRE.core.WorkUnit
             return viewModel;
         }
 
-        public List<string> GetListProcName()
+        public List<string> GetListProcIdentifier()
         {
             List<string> listProcName = new List<string>();
 
             foreach (Processor proc in ProcessorManager.List)
             {
-                listProcName.Add(proc.Name);
+                listProcName.Add(proc.Reference);
             }
 
             return listProcName;
@@ -81,6 +89,19 @@ namespace ECF_UNTEL_MILLETRE.core.WorkUnit
             {
                 return false;
             }
+        }
+
+        public static bool IsIdExist(string procRef)
+        {
+            foreach (Processor proc in ProcessorManager.List)
+            {
+                if (String.Equals(procRef, proc.Reference))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public void Load()
