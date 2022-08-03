@@ -9,6 +9,17 @@ namespace ECF_UNTEL_MILLETRE.core.Model
     {
         private string _name;
 
+        public Processor() : this(
+                new ProcessorFamily("DEFAULT", ProcessorArch.x86),
+                0000,
+                'A',
+                "DefaultName",
+                new DateTime(2022, 08, 03),
+                0,
+                0
+            )
+        {}
+
         public Processor(
             ProcessorFamily family,
             int referenceDigit,
@@ -27,7 +38,7 @@ namespace ECF_UNTEL_MILLETRE.core.Model
             Frequency = frequency;
         }
 
-        public ProcessorFamily Family { get; private set; }
+        public ProcessorFamily Family { get; set; }
 
         public string Name
         {
@@ -45,13 +56,13 @@ namespace ECF_UNTEL_MILLETRE.core.Model
             }
         }
 
-        public DateTime ReleaseDate { get; private set; }
+        public DateTime ReleaseDate { get; set; }
 
         public double Price { get; set; }
 
-        public double Frequency { get; private set; }
+        public double Frequency { get; set; }
 
-        public string Reference { get; private set; }
+        public string Reference { get; set; }
 
         private void SetReference(int firstDigit, char lastLetter)
         {

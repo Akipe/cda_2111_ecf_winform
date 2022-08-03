@@ -49,9 +49,13 @@
             this.lFamilyArch = new System.Windows.Forms.Label();
             this.tbFamilyName = new System.Windows.Forms.TextBox();
             this.bAddProc = new System.Windows.Forms.Button();
+            this.bSave = new System.Windows.Forms.Button();
+            this.gbActions = new System.Windows.Forms.GroupBox();
+            this.lCorporationInfo = new System.Windows.Forms.Label();
             this.gbProcessorList.SuspendLayout();
             this.gbProcessorSpecs.SuspendLayout();
             this.gbFamilySpecs.SuspendLayout();
+            this.gbActions.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbProcessorList
@@ -188,7 +192,7 @@
             this.gbFamilySpecs.Controls.Add(this.tbFamilyName);
             this.gbFamilySpecs.Location = new System.Drawing.Point(518, 12);
             this.gbFamilySpecs.Name = "gbFamilySpecs";
-            this.gbFamilySpecs.Size = new System.Drawing.Size(181, 110);
+            this.gbFamilySpecs.Size = new System.Drawing.Size(197, 110);
             this.gbFamilySpecs.TabIndex = 0;
             this.gbFamilySpecs.TabStop = false;
             this.gbFamilySpecs.Text = "Famille";
@@ -246,35 +250,69 @@
             // 
             // bAddProc
             // 
-            this.bAddProc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bAddProc.Location = new System.Drawing.Point(558, 135);
+            this.bAddProc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bAddProc.Location = new System.Drawing.Point(114, 22);
             this.bAddProc.Name = "bAddProc";
-            this.bAddProc.Size = new System.Drawing.Size(128, 53);
+            this.bAddProc.Size = new System.Drawing.Size(77, 43);
             this.bAddProc.TabIndex = 3;
             this.bAddProc.Text = "Ajouter nouveau";
             this.bAddProc.UseVisualStyleBackColor = true;
             this.bAddProc.Click += new System.EventHandler(this.bAddProc_Click);
             // 
+            // bSave
+            // 
+            this.bSave.Location = new System.Drawing.Point(6, 30);
+            this.bSave.Name = "bSave";
+            this.bSave.Size = new System.Drawing.Size(86, 23);
+            this.bSave.TabIndex = 4;
+            this.bSave.Text = "Sauvegarder";
+            this.bSave.UseVisualStyleBackColor = true;
+            this.bSave.Click += new System.EventHandler(this.bSave_Click);
+            // 
+            // gbActions
+            // 
+            this.gbActions.Controls.Add(this.bAddProc);
+            this.gbActions.Controls.Add(this.bSave);
+            this.gbActions.Location = new System.Drawing.Point(518, 128);
+            this.gbActions.Name = "gbActions";
+            this.gbActions.Size = new System.Drawing.Size(197, 71);
+            this.gbActions.TabIndex = 5;
+            this.gbActions.TabStop = false;
+            this.gbActions.Text = "Commandes";
+            // 
+            // lCorporationInfo
+            // 
+            this.lCorporationInfo.AutoSize = true;
+            this.lCorporationInfo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lCorporationInfo.Location = new System.Drawing.Point(646, 202);
+            this.lCorporationInfo.Name = "lCorporationInfo";
+            this.lCorporationInfo.Size = new System.Drawing.Size(69, 13);
+            this.lCorporationInfo.TabIndex = 9;
+            this.lCorporationInfo.Text = "Untel - 2022";
+            // 
             // FrmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 217);
-            this.Controls.Add(this.bAddProc);
+            this.ClientSize = new System.Drawing.Size(727, 222);
+            this.Controls.Add(this.lCorporationInfo);
+            this.Controls.Add(this.gbActions);
             this.Controls.Add(this.gbProcessorSpecs);
             this.Controls.Add(this.gbFamilySpecs);
             this.Controls.Add(this.gbProcessorList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "FrmHome";
-            this.Text = "Liste des micro-proceseurs";
+            this.Text = "Liste des micro-proceseurs - Untel";
             this.Load += new System.EventHandler(this.FrmHome_Load);
             this.gbProcessorList.ResumeLayout(false);
             this.gbProcessorSpecs.ResumeLayout(false);
             this.gbProcessorSpecs.PerformLayout();
             this.gbFamilySpecs.ResumeLayout(false);
             this.gbFamilySpecs.PerformLayout();
+            this.gbActions.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -301,5 +339,8 @@
         private Button bAddProc;
         private TextBox tbFamilyId;
         private Label label1;
+        private Button bSave;
+        private GroupBox gbActions;
+        private Label lCorporationInfo;
     }
 }

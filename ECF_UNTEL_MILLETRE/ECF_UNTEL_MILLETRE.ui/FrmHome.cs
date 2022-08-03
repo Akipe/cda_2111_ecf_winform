@@ -24,42 +24,16 @@ namespace ECF_UNTEL_MILLETRE.ui
             InitializeComponent();
         }
 
-        private void InitSomeProc()
+        private void InitProc()
         {
-            ProcessorManager.List.Add(new Processor(
-                new ProcessorFamily("LAKE", ProcessorArch.x86),
-                1200,
-                'F',
-                "Kakao",
-                new DateTime(2018, 05, 02),
-                99,
-                2.7
-            ));
-            ProcessorManager.List.Add(new Processor(
-                new ProcessorFamily("LAKE", ProcessorArch.x64),
-                5600,
-                'X',
-                "ProLiner",
-                new DateTime(2019, 09, 12),
-                189,
-                3.2
-            ));
-            ProcessorManager.List.Add(new Processor(
-                new ProcessorFamily("SUMO", ProcessorArch.x64),
-                8000,
-                'X',
-                "SayPlusPlus",
-                new DateTime(2021, 11, 12),
-                479,
-                4.333
-            ));
+            wu.Load();
         }
 
         private void FrmHome_Load(object sender, EventArgs e)
         {
             wu = new ProcessorWorkUnit();
 
-            InitSomeProc();
+            InitProc();
 
             listProcName = wu.GetListProcName();
 
@@ -88,6 +62,30 @@ namespace ECF_UNTEL_MILLETRE.ui
 
             listProcName = wu.GetListProcName();
             lbProcessorList.DataSource = listProcName;
+        }
+
+        private void bSave_Click(object sender, EventArgs e)
+        {
+            if (wu.Save())
+            {
+                MessageBox.Show(
+                    "Les données des processeurs ont été correctement sauvegardé.",
+                    "Enregistrer terminé.",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Impossible d'enregistrer le fichier."
+                    + Environment.NewLine
+                    + "Veuillez contacter le support informatique.",
+                    "Données non sauvegardé!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
     }
 }

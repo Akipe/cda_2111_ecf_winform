@@ -16,6 +16,7 @@ namespace ECF_UNTEL_MILLETRE.ui
     public partial class FrmAddCpu : Form
     {
         private ProcessorWorkUnit wu;
+        private bool hasSaved;
 
         public FrmAddCpu()
         {
@@ -25,23 +26,16 @@ namespace ECF_UNTEL_MILLETRE.ui
         private void FrmAddCpu_Load(object sender, EventArgs e)
         {
             wu = new ProcessorWorkUnit();
+            hasSaved = false;
+
+            tbProcReleaseDate.Text = DateTime.Now.ToShortDateString();
 
             this.AcceptButton = bAdd;
         }
 
         private void BClose_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-                "Êtes-vous sûr de vouloir fermer ? Toutes les données seront effacé et ne seront pas enregistrer",
-                "Fermeture de la fenêtre...",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
-            );
-
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            this.Close();
         }
 
         private void bAdd_Click(object sender, EventArgs e)
@@ -60,7 +54,8 @@ namespace ECF_UNTEL_MILLETRE.ui
             if (vm.IsValid())
             {
                 wu.AddOne(vm);
-                this.Close();
+                hasSaved = true;
+                Close();
             }
             else
             {
@@ -74,6 +69,33 @@ namespace ECF_UNTEL_MILLETRE.ui
                 lProcPriceMsg.Text = procErr.PriceMsg;
                 lFamNameMsg.Text = famErr.NameMsg;
                 lFamArchMsg.Text = famErr.ArchMsg;
+            }
+        }
+
+        private void FrmAddCpu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (hasSaved)
+            {
+                DialogResult result = MessageBox.Show(
+                    "Processeur enregistré",
+                    "Sauvegarde terminé",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show(
+                    "Êtes-vous sûr de vouloir fermer ? Toutes les données seront effacé et ne seront pas enregistrer",
+                    "Fermeture de la fenêtre...",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
             }
         }
     }

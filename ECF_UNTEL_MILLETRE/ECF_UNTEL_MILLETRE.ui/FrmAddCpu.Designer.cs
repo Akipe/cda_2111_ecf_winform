@@ -53,6 +53,7 @@
             this.lFamilyArch = new System.Windows.Forms.Label();
             this.tbFamilyName = new System.Windows.Forms.TextBox();
             this.BClose = new System.Windows.Forms.Button();
+            this.lCorporationInfo = new System.Windows.Forms.Label();
             this.gbProcessorSpecs.SuspendLayout();
             this.gbFamilySpecs.SuspendLayout();
             this.SuspendLayout();
@@ -307,11 +308,22 @@
             this.BClose.UseVisualStyleBackColor = true;
             this.BClose.Click += new System.EventHandler(this.BClose_Click);
             // 
+            // lCorporationInfo
+            // 
+            this.lCorporationInfo.AutoSize = true;
+            this.lCorporationInfo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lCorporationInfo.Location = new System.Drawing.Point(733, 296);
+            this.lCorporationInfo.Name = "lCorporationInfo";
+            this.lCorporationInfo.Size = new System.Drawing.Size(69, 13);
+            this.lCorporationInfo.TabIndex = 8;
+            this.lCorporationInfo.Text = "Untel - 2022";
+            // 
             // FrmAddCpu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 318);
+            this.Controls.Add(this.lCorporationInfo);
             this.Controls.Add(this.BClose);
             this.Controls.Add(this.bAdd);
             this.Controls.Add(this.gbProcessorSpecs);
@@ -319,13 +331,15 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "FrmAddCpu";
-            this.Text = "Ajout d\'un processeur";
+            this.Text = "Ajout d\'un processeur - Untel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAddCpu_FormClosing);
             this.Load += new System.EventHandler(this.FrmAddCpu_Load);
             this.gbProcessorSpecs.ResumeLayout(false);
             this.gbProcessorSpecs.PerformLayout();
             this.gbFamilySpecs.ResumeLayout(false);
             this.gbFamilySpecs.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -356,5 +370,6 @@
         private Label lProcFrecMsg;
         private Label lFamArchMsg;
         private Label lFamNameMsg;
+        private Label lCorporationInfo;
     }
 }
