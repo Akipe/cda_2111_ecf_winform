@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ECF_UNTEL_MILLETRE.core.ProcessorFamily">
+    <Position X="6" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACIAAAAAAAAAAAAABAAAQAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>ProcessorFamily.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Arch" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ECF_UNTEL_MILLETRE.core.Processor">
+    <Position X="3.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIIACAAQAIAAAAAAAAAAQAAIAAAAAAACAAAAAABAA=</HashCode>
+      <FileName>Processor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Family" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="ECF_UNTEL_MILLETRE.core.ProcessorArch">
+    <Position X="6" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>ProcessorArch.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

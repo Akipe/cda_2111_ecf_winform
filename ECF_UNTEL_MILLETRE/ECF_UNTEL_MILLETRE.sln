@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECF_UNTEL_MILLETRE.core", "ECF_UNTEL_MILLETRE.core\ECF_UNTEL_MILLETRE.core.csproj", "{78AB7606-BD60-451C-89F7-A453B6EC1403}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECF_UNTEL_MILLETRE.ui", "ECF_UNTEL_MILLETRE.ui\ECF_UNTEL_MILLETRE.ui.csproj", "{9C3BE780-50B9-4855-9957-E0D8E0E6527E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78AB7606-BD60-451C-89F7-A453B6EC1403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78AB7606-BD60-451C-89F7-A453B6EC1403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78AB7606-BD60-451C-89F7-A453B6EC1403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78AB7606-BD60-451C-89F7-A453B6EC1403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C3BE780-50B9-4855-9957-E0D8E0E6527E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C3BE780-50B9-4855-9957-E0D8E0E6527E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C3BE780-50B9-4855-9957-E0D8E0E6527E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C3BE780-50B9-4855-9957-E0D8E0E6527E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {71A2A96D-E07F-4AD1-B276-BF03F36FACB5}
+	EndGlobalSection
+EndGlobal
