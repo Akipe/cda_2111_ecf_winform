@@ -35,7 +35,7 @@ namespace ECF_UNTEL_MILLETRE.ui
 
             InitProc();
 
-            listProcName = wu.GetListProcIdentifier();
+            listProcName = wu.GetUserFrendlyListProcessor();
 
             lbProcessorList.DataSource = listProcName;
         }
@@ -43,7 +43,8 @@ namespace ECF_UNTEL_MILLETRE.ui
 
         private void lbProcessorList_ProcSelectChanged(object sender, EventArgs e)
         {
-            vm = wu.GetInfoFromOne(lbProcessorList.SelectedItem.ToString());
+            //vm = wu.GetInfoFromOne(lbProcessorList.SelectedItem.ToString());
+            vm = wu.GetInfoFromOne(GetProcRefFromSelectedList());
 
             tbProcName.Text = vm.Name;
             tbProcRef.Text = vm.Reference;
@@ -60,7 +61,7 @@ namespace ECF_UNTEL_MILLETRE.ui
             FrmAddCpu frmAddCpu = new FrmAddCpu();
             frmAddCpu.ShowDialog();
 
-            listProcName = wu.GetListProcIdentifier();
+            listProcName = wu.GetUserFrendlyListProcessor();
             lbProcessorList.DataSource = listProcName;
         }
 
@@ -85,6 +86,27 @@ namespace ECF_UNTEL_MILLETRE.ui
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
+            }
+        }
+
+        private string GetProcRefFromSelectedList()
+        {
+            string referenceWithName = lbProcessorList.SelectedItem.ToString();
+            int indexSpace = referenceWithName.IndexOf(" ");
+
+            return referenceWithName.Substring(0, indexSpace);
+        }
+
+        private void FrmHome_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (DialogResult.No == MessageBox.Show(
+                "Êtes-vous sûr de vouloir quitter ?",
+                "Quitter l'application?",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            ))
+            {
+                e.Cancel = true;
             }
         }
     }

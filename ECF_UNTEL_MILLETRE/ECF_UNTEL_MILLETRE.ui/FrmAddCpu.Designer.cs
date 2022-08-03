@@ -64,7 +64,7 @@
             this.bAdd.Location = new System.Drawing.Point(651, 216);
             this.bAdd.Name = "bAdd";
             this.bAdd.Size = new System.Drawing.Size(76, 35);
-            this.bAdd.TabIndex = 6;
+            this.bAdd.TabIndex = 7;
             this.bAdd.Text = "Valider";
             this.bAdd.UseVisualStyleBackColor = true;
             this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
@@ -148,7 +148,7 @@
             this.tbProcReleaseDate.Location = new System.Drawing.Point(100, 189);
             this.tbProcReleaseDate.Name = "tbProcReleaseDate";
             this.tbProcReleaseDate.Size = new System.Drawing.Size(164, 23);
-            this.tbProcReleaseDate.TabIndex = 10;
+            this.tbProcReleaseDate.TabIndex = 3;
             this.tbProcReleaseDate.Text = "10/10/1990";
             // 
             // tbProcName
@@ -156,7 +156,7 @@
             this.tbProcName.Location = new System.Drawing.Point(103, 19);
             this.tbProcName.Name = "tbProcName";
             this.tbProcName.Size = new System.Drawing.Size(164, 23);
-            this.tbProcName.TabIndex = 9;
+            this.tbProcName.TabIndex = 0;
             this.tbProcName.Text = "Ector";
             // 
             // tbProcRef
@@ -164,7 +164,7 @@
             this.tbProcRef.Location = new System.Drawing.Point(103, 74);
             this.tbProcRef.Name = "tbProcRef";
             this.tbProcRef.Size = new System.Drawing.Size(164, 23);
-            this.tbProcRef.TabIndex = 8;
+            this.tbProcRef.TabIndex = 1;
             this.tbProcRef.Text = "1000A";
             // 
             // tbProcFrec
@@ -172,7 +172,7 @@
             this.tbProcFrec.Location = new System.Drawing.Point(103, 133);
             this.tbProcFrec.Name = "tbProcFrec";
             this.tbProcFrec.Size = new System.Drawing.Size(164, 23);
-            this.tbProcFrec.TabIndex = 7;
+            this.tbProcFrec.TabIndex = 2;
             this.tbProcFrec.Text = "2,7";
             // 
             // tbProcPrice
@@ -180,7 +180,7 @@
             this.tbProcPrice.Location = new System.Drawing.Point(100, 242);
             this.tbProcPrice.Name = "tbProcPrice";
             this.tbProcPrice.Size = new System.Drawing.Size(164, 23);
-            this.tbProcPrice.TabIndex = 6;
+            this.tbProcPrice.TabIndex = 4;
             this.tbProcPrice.Text = "245";
             // 
             // lPrice
@@ -303,7 +303,7 @@
             this.BClose.Location = new System.Drawing.Point(522, 216);
             this.BClose.Name = "BClose";
             this.BClose.Size = new System.Drawing.Size(76, 35);
-            this.BClose.TabIndex = 7;
+            this.BClose.TabIndex = 8;
             this.BClose.Text = "Fermer";
             this.BClose.UseVisualStyleBackColor = true;
             this.BClose.Click += new System.EventHandler(this.BClose_Click);

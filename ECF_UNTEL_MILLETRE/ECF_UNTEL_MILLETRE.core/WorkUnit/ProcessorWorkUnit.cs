@@ -63,13 +63,13 @@ namespace ECF_UNTEL_MILLETRE.core.WorkUnit
             return viewModel;
         }
 
-        public List<string> GetListProcIdentifier()
+        public List<string> GetUserFrendlyListProcessor()
         {
             List<string> listProcName = new List<string>();
 
             foreach (Processor proc in ProcessorManager.List)
             {
-                listProcName.Add(proc.Reference);
+                listProcName.Add(proc.Reference + " - " + proc.Name);
             }
 
             return listProcName;

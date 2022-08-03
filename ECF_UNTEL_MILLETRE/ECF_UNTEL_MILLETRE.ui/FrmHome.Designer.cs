@@ -103,7 +103,7 @@
             this.tbProcReleaseDate.Name = "tbProcReleaseDate";
             this.tbProcReleaseDate.ReadOnly = true;
             this.tbProcReleaseDate.Size = new System.Drawing.Size(164, 23);
-            this.tbProcReleaseDate.TabIndex = 10;
+            this.tbProcReleaseDate.TabIndex = 7;
             // 
             // tbProcName
             // 
@@ -111,7 +111,7 @@
             this.tbProcName.Name = "tbProcName";
             this.tbProcName.ReadOnly = true;
             this.tbProcName.Size = new System.Drawing.Size(164, 23);
-            this.tbProcName.TabIndex = 9;
+            this.tbProcName.TabIndex = 4;
             // 
             // tbProcRef
             // 
@@ -119,7 +119,7 @@
             this.tbProcRef.Name = "tbProcRef";
             this.tbProcRef.ReadOnly = true;
             this.tbProcRef.Size = new System.Drawing.Size(164, 23);
-            this.tbProcRef.TabIndex = 8;
+            this.tbProcRef.TabIndex = 5;
             // 
             // tbProcFrec
             // 
@@ -127,7 +127,7 @@
             this.tbProcFrec.Name = "tbProcFrec";
             this.tbProcFrec.ReadOnly = true;
             this.tbProcFrec.Size = new System.Drawing.Size(164, 23);
-            this.tbProcFrec.TabIndex = 7;
+            this.tbProcFrec.TabIndex = 6;
             // 
             // tbProcPrice
             // 
@@ -135,7 +135,7 @@
             this.tbProcPrice.Name = "tbProcPrice";
             this.tbProcPrice.ReadOnly = true;
             this.tbProcPrice.Size = new System.Drawing.Size(164, 23);
-            this.tbProcPrice.TabIndex = 6;
+            this.tbProcPrice.TabIndex = 8;
             // 
             // lPrice
             // 
@@ -203,7 +203,7 @@
             this.tbFamilyId.Name = "tbFamilyId";
             this.tbFamilyId.ReadOnly = true;
             this.tbFamilyId.Size = new System.Drawing.Size(65, 23);
-            this.tbFamilyId.TabIndex = 8;
+            this.tbFamilyId.TabIndex = 11;
             // 
             // label1
             // 
@@ -220,7 +220,7 @@
             this.tbFamilyArch.Name = "tbFamilyArch";
             this.tbFamilyArch.ReadOnly = true;
             this.tbFamilyArch.Size = new System.Drawing.Size(65, 23);
-            this.tbFamilyArch.TabIndex = 6;
+            this.tbFamilyArch.TabIndex = 10;
             // 
             // lFamilyName
             // 
@@ -246,7 +246,7 @@
             this.tbFamilyName.Name = "tbFamilyName";
             this.tbFamilyName.ReadOnly = true;
             this.tbFamilyName.Size = new System.Drawing.Size(65, 23);
-            this.tbFamilyName.TabIndex = 5;
+            this.tbFamilyName.TabIndex = 9;
             // 
             // bAddProc
             // 
@@ -254,7 +254,7 @@
             this.bAddProc.Location = new System.Drawing.Point(114, 22);
             this.bAddProc.Name = "bAddProc";
             this.bAddProc.Size = new System.Drawing.Size(77, 43);
-            this.bAddProc.TabIndex = 3;
+            this.bAddProc.TabIndex = 2;
             this.bAddProc.Text = "Ajouter nouveau";
             this.bAddProc.UseVisualStyleBackColor = true;
             this.bAddProc.Click += new System.EventHandler(this.bAddProc_Click);
@@ -264,7 +264,7 @@
             this.bSave.Location = new System.Drawing.Point(6, 30);
             this.bSave.Name = "bSave";
             this.bSave.Size = new System.Drawing.Size(86, 23);
-            this.bSave.TabIndex = 4;
+            this.bSave.TabIndex = 3;
             this.bSave.Text = "Sauvegarder";
             this.bSave.UseVisualStyleBackColor = true;
             this.bSave.Click += new System.EventHandler(this.bSave_Click);
@@ -304,6 +304,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmHome";
             this.Text = "Liste des micro-proceseurs - Untel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmHome_FormClosing);
             this.Load += new System.EventHandler(this.FrmHome_Load);
             this.gbProcessorList.ResumeLayout(false);
             this.gbProcessorSpecs.ResumeLayout(false);
