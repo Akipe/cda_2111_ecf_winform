@@ -8,4 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ECF_UNTEL_MILLETRE.core\ECF_UNTEL_MILLETRE.core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ECF_UNTEL_MILLETRE.core
+namespace ECF_UNTEL_MILLETRE.core.Model
 {
     public class Processor
     {
         private string _name;
-        private DateTime? _releaseDate;
 
         public Processor(
             ProcessorFamily family,
             int referenceDigit,
             char referenceLetter,
             string name,
-            DateTime? releaseDate,
+            DateTime releaseDate,
             double price,
             double frequency
-        ) {
+        )
+        {
             Family = family;
             SetReference(referenceDigit, referenceLetter);
             Name = name;
@@ -34,7 +34,7 @@ namespace ECF_UNTEL_MILLETRE.core
             get => _name;
             set
             {
-                if (value.Any(aChar => Char.IsWhiteSpace(aChar)))
+                if (value.Any(aChar => char.IsWhiteSpace(aChar)))
                 {
                     throw new ArgumentException("The name can't have a space.");
                 }
@@ -43,27 +43,13 @@ namespace ECF_UNTEL_MILLETRE.core
             }
         }
 
-        public DateTime? ReleaseDate
-        {
-            get
-            {
-                return _releaseDate;
-            }
-
-            set
-            {
-                if (_releaseDate is null)
-                {
-                    _releaseDate = value;
-                }
-            }
-        }
+        public DateTime ReleaseDate { get; private set; }
 
         public double Price { get; set; }
 
-        public double? Frequency { get; private set; }
+        public double Frequency { get; private set; }
 
-        public string? Reference { get; private set; }
+        public string Reference { get; private set; }
 
         private void SetReference(int firstDigit, char lastLetter)
         {
